@@ -6,9 +6,9 @@ const CONFIG = {
   PHONE: '',          // e.g. '(905) 555-0123'
   EMAIL: '',          // quote requests are emailed here (mailto) unless FORM_ENDPOINT is set
   HOURS: '',          // e.g. 'Mon–Fri 7 am–6 pm, emergencies by phone'
-  AREA: '',           // e.g. 'Newmarket, Aurora, Richmond Hill and York Region'
-  LICENCE: '',        // e.g. 'ECRA/ESA Licence #7000XXXX'
-  INSURANCE: '',      // e.g. '$2M liability insurance'
+  AREA: 'Toronto & GTA',
+  LICENCE: 'ECRA/ESA Lic. #7018901 · Master Electrician',
+  INSURANCE: 'Insured',
   FORM_ENDPOINT: ''   // optional: Formspree/Basin URL; leave blank to use mailto
 };
 
@@ -17,7 +17,7 @@ const IMG = (id, w = 1100) => `https://images.unsplash.com/photo-${id}?w=${w}&q=
 const SERVICES = [
   { id: 'panel', label: 'Panel upgrades', title: 'Panel upgrades & replacements',
     text: 'Moving from 100 A to 200 A, replacing an old fuse box or a panel your insurer has flagged, or adding a sub-panel for a basement, garage or addition.',
-    list: ['Load check on what your home draws today and what you plan to add', 'Coordination with your utility for the disconnect and reconnect', 'New breakers, a tidy panel and a typed directory'],
+    list: ['Load check on what your home draws today and what you plan to add', 'Coordination with your utility for the disconnect and reconnect', 'New breakers and a clean, organized panel'],
     note: 'panel replacements always need an ESA permit and inspection. You’ll know what your job needs before you agree to anything.',
     img: IMG('1660330589693-99889d60181e'), alt: 'An electrician working inside an open residential breaker panel' },
   { id: 'ev', label: 'EV chargers', title: 'EV charger installs',
@@ -198,8 +198,8 @@ function panel() {
     });
     const n = [...selected].filter(id => id !== 'other').length;
     pnl.classList.toggle('live', n > 0);
-    $('#panelCount').textContent = n ? `${n} circuit${n > 1 ? 's' : ''} on` : 'All circuits off';
-    $('#panelHint').textContent = n ? 'Added to the quote form below.' : 'Flip a breaker on to add it to your quote.';
+    $('#panelCount').textContent = n ? `${n} circuit${n > 1 ? 's' : ''} on` : 'Select a service below to get started';
+    $('#panelHint').textContent = n ? 'Added to the quote form below.' : 'Each service you switch on goes into your quote.';
     syncCard();
     chipsSync();
   };
