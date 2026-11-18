@@ -1,0 +1,10 @@
+.git
+.wrangler
+.claude
+_src
+README.md
+CNAME
+worker.js
+wrangler.jsonc
+.gitignore
+.assetsignore
