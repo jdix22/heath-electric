@@ -20,21 +20,11 @@ const SERVICES = [
     list: ['Fault traced with proper testing, not guesswork', 'A plain explanation of what failed and why', 'A fix price before the repair starts'],
     note: 'if something smells hot or you see scorch marks, switch off that breaker and don’t reset it until it’s been checked.',
     img: IMG('1758101755915-462eddc23f57'), alt: 'An electrician testing a breaker panel with a multimeter' },
-  { id: 'residential', label: 'Residential electrical', title: 'Residential electrical',
-    text: 'Electrical work for houses, townhomes and condos: new circuits, upgrades, repairs and safety checks, done neatly and to code.',
-    list: ['Fuse box, knob-and-tube and aluminum wiring assessments', 'Upgrades and repairs with as little wall damage as possible', 'ESA permits filed where the job needs one'],
-    note: 'many insurers ask about older wiring when you buy or renew a policy. An assessment gives you a clear answer.',
-    img: IMG('1587534012737-1fd8a84b519e'), alt: 'A white duplex wall outlet on a teal painted wall' },
   { id: 'lighting', label: 'Lighting & pot lights', title: 'Lighting, pot lights & dimmers',
     text: 'Slim LED pot lights, pendants over the island, under-cabinet strips, mood lighting, dimmers that don’t buzz, and exterior lights on timers or sensors.',
     list: ['Layout planned for even light, not a grid of random holes', 'Minimal drywall patching through existing ceilings', 'Dimmers matched to the fixtures so nothing flickers'],
     note: 'warm white (2700–3000 K) suits most living spaces; cooler light suits garages and workshops.',
     img: IMG('1730991568658-ad8638395a9e'), alt: 'A bright kitchen with a white island and glass pendant lights' },
-  { id: 'commercial', label: 'Commercial electrical', title: 'Commercial electrical',
-    text: 'Offices, retail units, restaurants and light industrial spaces: fit-outs, lighting upgrades, equipment circuits and repairs, planned around your business hours.',
-    list: ['Tenant fit-outs and renovations', 'LED lighting retrofits and emergency lighting', 'Work scheduled to keep downtime low'],
-    note: 'commercial work is filed with the ESA and inspected too. Tell us your opening hours and the work is planned around them.',
-    img: IMG('1652715564391-38cc4475b7f5'), alt: 'Wiring and breakers inside an electrical panel' },
   { id: 'panel', label: 'Panel & service upgrades', title: 'Panel & service upgrades',
     text: 'Moving from 100 A to 200 A, replacing an old fuse box or a panel your insurer has flagged, or adding a sub-panel for a basement, garage or addition.',
     list: ['Load check on what your home draws today and what you plan to add', 'Coordination with your utility for the disconnect and reconnect', 'New breakers and a clean, organized panel'],
@@ -51,12 +41,12 @@ const SERVICES = [
     note: 'many homes can add a charger without a panel upgrade. A load calculation tells you for sure.',
     img: IMG('1766507680004-1c71007aefe5'), alt: 'A wall-mounted electric car charger on a wooden fence' },
   { id: 'newbuild', label: 'Custom homes & new builds', title: 'Custom homes & new builds',
-    text: 'Complete electrical for new homes, from the service and panel through rough-in, fixtures and final inspection, coordinated with your builder.',
+    text: 'Complete electrical wiring and installations for new construction projects.',
     list: ['Electrical layout reviewed with you and your builder', 'Rough-in and final inspections booked on schedule', 'Lighting, data and EV-ready circuits planned from day one'],
     note: 'extra circuits, data runs and EV wiring cost far less while the walls are still open.',
     img: IMG('1621905251189-08b45d6a269e'), alt: 'An electrician in a hard hat installing wiring at a wall box' },
   { id: 'dedicated', label: 'Dedicated circuits', title: 'Dedicated circuits',
-    text: 'A circuit of its own for the things that need one: kitchen appliances, freezers, sump pumps, workshops, home gyms and heat pumps.',
+    text: 'New circuits for appliances, equipment and increased electrical demands.',
     list: ['Load check before anything is added', 'Correct wire size and breaker for the equipment', 'GFCI or AFCI protection where the code calls for it'],
     note: 'if a breaker trips whenever two appliances run together, a dedicated circuit is usually the fix.',
     img: IMG('1576446470246-499c738d1c8e'), alt: 'A neat row of new white breakers with wiring dressed along the rails' },
@@ -71,7 +61,7 @@ const SERVICES = [
     note: 'swapping a two-prong outlet for a three-prong one without a ground isn’t safe on its own. There are proper ways to fix it.',
     img: IMG('1587534012737-1fd8a84b519e'), alt: 'A white duplex wall outlet on a teal painted wall' },
   { id: 'data', label: 'Data & network cabling', title: 'Data & network cabling',
-    text: 'Wired internet to offices, TVs and access points, a tidy network panel, and cabling for cameras and doorbells, so Wi-Fi isn’t doing all the work.',
+    text: 'Cat6 cabling, network outlets and structured cabling for homes and businesses.',
     list: ['Cat6 runs to the rooms that need them', 'A structured network panel to keep it organized', 'Wiring for cameras, doorbells and access points'],
     note: 'during a renovation or new build, data runs cost a fraction of what they do once the walls are closed.',
     img: IMG('1652715564391-38cc4475b7f5'), alt: 'Wiring and breakers inside an electrical panel' }
@@ -202,7 +192,6 @@ function panel() {
     const n = [...selected].filter(id => id !== 'other').length;
     pnl.classList.toggle('live', n > 0);
     $('#panelCount').textContent = n ? `${n} circuit${n > 1 ? 's' : ''} on` : 'Select a service below to get started';
-    $('#panelHint').textContent = n ? 'Added to the quote form below.' : 'Each service you switch on goes into your quote.';
     syncCard();
     chipsSync();
   };

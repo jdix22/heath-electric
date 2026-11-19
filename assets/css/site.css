@@ -546,3 +546,7 @@ a.btn-await::before{display:none}
 .circuit[hidden]{display:none!important}
 .ba-tag{top:16px;bottom:auto}
 @media (max-width:680px){.ba-tag{top:12px;bottom:auto}}
+.panel-foot{justify-content:flex-end}
+
+.brand-word{white-space:nowrap}
+@media (max-width:680px){.brand-word{font-size:17px;letter-spacing:.03em}}
