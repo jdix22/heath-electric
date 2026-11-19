@@ -3,11 +3,11 @@
  * FACTS (fill these in when the owner sends them; every "awaiting" spot on the page updates itself)
  */
 const CONFIG = {
-  PHONE: '',          // e.g. '(905) 555-0123'
+  PHONE: '(647) 895-5693',
   EMAIL: '',          // quote requests are emailed here (mailto) unless FORM_ENDPOINT is set
   HOURS: '',          // e.g. 'Mon–Fri 7 am–6 pm, emergencies by phone'
   AREA: 'Toronto & GTA',
-  LICENCE: 'ECRA/ESA Lic. #7018901 · Master Electrician',
+  LICENCE: 'ECRA/ESA Licence #7018901 · Master Electrician',
   INSURANCE: 'Insured',
   FORM_ENDPOINT: ''   // optional: Formspree/Basin URL; leave blank to use mailto
 };
@@ -15,74 +15,67 @@ const CONFIG = {
 const IMG = (id, w = 1100) => `https://images.unsplash.com/photo-${id}?w=${w}&q=70&auto=format&fit=crop`;
 
 const SERVICES = [
-  { id: 'panel', label: 'Panel upgrades', title: 'Panel upgrades & replacements',
-    text: 'Moving from 100 A to 200 A, replacing an old fuse box or a panel your insurer has flagged, or adding a sub-panel for a basement, garage or addition.',
-    list: ['Load check on what your home draws today and what you plan to add', 'Coordination with your utility for the disconnect and reconnect', 'New breakers and a clean, organized panel'],
-    note: 'panel replacements always need an ESA permit and inspection. You’ll know what your job needs before you agree to anything.',
-    img: IMG('1660330589693-99889d60181e'), alt: 'An electrician working inside an open residential breaker panel' },
-  { id: 'ev', label: 'EV chargers', title: 'EV charger installs',
-    text: 'A Level 2 charger in the garage or driveway on its own dedicated circuit, placed where the cable actually reaches the car.',
-    list: ['Check of your panel’s spare capacity before anything is bought', 'Dedicated circuit and a weather-rated install outside', 'Help choosing a hardwired or plug-in charger'],
-    note: 'many homes can add a charger without a panel upgrade. A load calculation tells you for sure.',
-    img: IMG('1766507680004-1c71007aefe5'), alt: 'A wall-mounted electric car charger on a wooden fence' },
-  { id: 'lighting', label: 'Pot lights & fixtures', title: 'Pot lights, fixtures & dimmers',
-    text: 'Slim LED pot lights, pendants over the island, under-cabinet strips, dimmers that don’t buzz, and exterior lights on timers or sensors.',
-    list: ['Layout planned for even light, not a grid of random holes', 'Minimal drywall patching through existing ceilings', 'Dimmers matched to the fixtures so nothing flickers'],
-    note: 'warm white (2700–3000 K) suits most living spaces; cooler light suits garages and workshops.',
-    img: IMG('1730991568658-ad8638395a9e'), alt: 'A bright kitchen with a white island and glass pendant lights' },
-  { id: 'outlets', label: 'Outlets & switches', title: 'Outlets, switches & GFCIs',
-    text: 'New outlets where you actually need them, USB-C and smart switches, GFCI protection in kitchens, baths and outdoors, and two-prong outlets brought up to date.',
-    list: ['Added circuits where one is doing too much', 'GFCI and AFCI protection where the code calls for it', 'Cover plates straight, flush and level'],
-    note: 'swapping a two-prong outlet for a three-prong one without a ground isn’t safe on its own. There are proper ways to fix it.',
-    img: IMG('1587534012737-1fd8a84b519e'), alt: 'A white duplex wall outlet on a teal painted wall' },
-  { id: 'reno', label: 'Reno & basement', title: 'Renovation & basement wiring',
-    text: 'Rough-in for a basement finish, kitchen and bath renovations, moved walls and moved outlets, done on your contractor’s schedule.',
-    list: ['Circuit plan before the drywall goes up', 'Rough-in ready for inspection on time', 'Final connections, devices and testing'],
-    note: 'basement and kitchen renos usually need new dedicated circuits. Planning them early is cheaper than opening walls later.',
-    img: IMG('1621905251189-08b45d6a269e'), alt: 'An electrician in a hard hat installing wiring at a wall box' },
-  { id: 'trouble', label: 'Troubleshooting', title: 'Troubleshooting & repairs',
+  { id: 'trouble', label: 'Troubleshooting & repairs', title: 'Troubleshooting & repairs',
     text: 'Breakers that keep tripping, outlets that died, lights that flicker, switches that buzz or feel warm. Found, explained and fixed.',
     list: ['Fault traced with proper testing, not guesswork', 'A plain explanation of what failed and why', 'A fix price before the repair starts'],
     note: 'if something smells hot or you see scorch marks, switch off that breaker and don’t reset it until it’s been checked.',
     img: IMG('1758101755915-462eddc23f57'), alt: 'An electrician testing a breaker panel with a multimeter' },
-  { id: 'alarms', label: 'Smoke & CO alarms', title: 'Smoke & CO alarms',
-    text: 'Hardwired, interconnected smoke and carbon monoxide alarms, so when one sounds they all do.',
-    list: ['Alarms on every storey and outside sleeping areas', 'Interconnection so a basement alarm is heard upstairs', 'Battery backup on every hardwired unit'],
-    note: 'Ontario requires working smoke alarms on every storey and CO alarms outside sleeping areas in homes with a fuel-burning appliance or an attached garage.',
-    img: IMG('1767672857994-73a27b723506'), alt: 'A box of new white smoke alarms with their mounting plates and instructions' },
-  { id: 'outdoor', label: 'Outdoor & hot tub', title: 'Outdoor, garage & hot tub power',
-    text: 'Weatherproof outlets, landscape and security lighting, power to the garage or shed, and hot tub and pool equipment hookups with the disconnect in the right place.',
-    list: ['Buried or surface runs done to the right depth and rating', 'Hot tub disconnects placed where the code requires', 'Outdoor GFCI protection throughout'],
+  { id: 'residential', label: 'Residential electrical', title: 'Residential electrical',
+    text: 'Electrical work for houses, townhomes and condos: new circuits, upgrades, repairs and safety checks, done neatly and to code.',
+    list: ['Fuse box, knob-and-tube and aluminum wiring assessments', 'Upgrades and repairs with as little wall damage as possible', 'ESA permits filed where the job needs one'],
+    note: 'many insurers ask about older wiring when you buy or renew a policy. An assessment gives you a clear answer.',
+    img: IMG('1587534012737-1fd8a84b519e'), alt: 'A white duplex wall outlet on a teal painted wall' },
+  { id: 'lighting', label: 'Lighting & pot lights', title: 'Lighting, pot lights & dimmers',
+    text: 'Slim LED pot lights, pendants over the island, under-cabinet strips, mood lighting, dimmers that don’t buzz, and exterior lights on timers or sensors.',
+    list: ['Layout planned for even light, not a grid of random holes', 'Minimal drywall patching through existing ceilings', 'Dimmers matched to the fixtures so nothing flickers'],
+    note: 'warm white (2700–3000 K) suits most living spaces; cooler light suits garages and workshops.',
+    img: IMG('1730991568658-ad8638395a9e'), alt: 'A bright kitchen with a white island and glass pendant lights' },
+  { id: 'commercial', label: 'Commercial electrical', title: 'Commercial electrical',
+    text: 'Offices, retail units, restaurants and light industrial spaces: fit-outs, lighting upgrades, equipment circuits and repairs, planned around your business hours.',
+    list: ['Tenant fit-outs and renovations', 'LED lighting retrofits and emergency lighting', 'Work scheduled to keep downtime low'],
+    note: 'commercial work is filed with the ESA and inspected too. Tell us your opening hours and the work is planned around them.',
+    img: IMG('1652715564391-38cc4475b7f5'), alt: 'Wiring and breakers inside an electrical panel' },
+  { id: 'panel', label: 'Panel & service upgrades', title: 'Panel & service upgrades',
+    text: 'Moving from 100 A to 200 A, replacing an old fuse box or a panel your insurer has flagged, or adding a sub-panel for a basement, garage or addition.',
+    list: ['Load check on what your home draws today and what you plan to add', 'Coordination with your utility for the disconnect and reconnect', 'New breakers and a clean, organized panel'],
+    note: 'panel replacements always need an ESA permit and inspection. You’ll know what your job needs before you agree to anything.',
+    img: IMG('1660330589693-99889d60181e'), alt: 'An electrician working inside an open residential breaker panel' },
+  { id: 'reno', label: 'Renovations & additions', title: 'Renovations & additions',
+    text: 'Kitchen and bath renovations, basement finishes and additions: moved walls, moved outlets and new circuits, done on your contractor’s schedule.',
+    list: ['Circuit plan before the drywall goes up', 'Rough-in ready for inspection on time', 'Final connections, devices and testing'],
+    note: 'basement and kitchen renos usually need new dedicated circuits. Planning them early is cheaper than opening walls later.',
+    img: IMG('1621905251189-08b45d6a269e'), alt: 'An electrician in a hard hat installing wiring at a wall box' },
+  { id: 'ev', label: 'EV charger installation', title: 'EV charger installation',
+    text: 'A Level 2 charger in the garage or driveway on its own dedicated circuit, placed where the cable actually reaches the car.',
+    list: ['Check of your panel’s spare capacity before anything is bought', 'Dedicated circuit and a weather-rated install outside', 'Help choosing a hardwired or plug-in charger'],
+    note: 'many homes can add a charger without a panel upgrade. A load calculation tells you for sure.',
+    img: IMG('1766507680004-1c71007aefe5'), alt: 'A wall-mounted electric car charger on a wooden fence' },
+  { id: 'newbuild', label: 'Custom homes & new builds', title: 'Custom homes & new builds',
+    text: 'Complete electrical for new homes, from the service and panel through rough-in, fixtures and final inspection, coordinated with your builder.',
+    list: ['Electrical layout reviewed with you and your builder', 'Rough-in and final inspections booked on schedule', 'Lighting, data and EV-ready circuits planned from day one'],
+    note: 'extra circuits, data runs and EV wiring cost far less while the walls are still open.',
+    img: IMG('1621905251189-08b45d6a269e'), alt: 'An electrician in a hard hat installing wiring at a wall box' },
+  { id: 'dedicated', label: 'Dedicated circuits', title: 'Dedicated circuits',
+    text: 'A circuit of its own for the things that need one: kitchen appliances, freezers, sump pumps, workshops, home gyms and heat pumps.',
+    list: ['Load check before anything is added', 'Correct wire size and breaker for the equipment', 'GFCI or AFCI protection where the code calls for it'],
+    note: 'if a breaker trips whenever two appliances run together, a dedicated circuit is usually the fix.',
+    img: IMG('1576446470246-499c738d1c8e'), alt: 'A neat row of new white breakers with wiring dressed along the rails' },
+  { id: 'outdoor', label: 'Hot tubs & outdoor power', title: 'Hot tubs, outdoor & garage power',
+    text: 'Hot tub and pool equipment hookups with the disconnect in the right place, weatherproof outlets, landscape and security lighting, and power to the garage or shed.',
+    list: ['Hot tub disconnects placed where the code requires', 'Buried or surface runs done to the right depth and rating', 'Outdoor GFCI protection throughout'],
     note: 'a hot tub needs its own GFCI-protected circuit and a disconnect within sight of the tub, kept at least 1.5 m from the water. Plan the spot before the tub arrives.',
-    img: IMG('1660330589827-da8ab7dd3c02'), alt: 'An electrician working on an outdoor electrical meter and panel' }
+    img: IMG('1660330589827-da8ab7dd3c02'), alt: 'An electrician working on an outdoor electrical meter and panel' },
+  { id: 'outlets', label: 'Outlets, switches & GFCIs', title: 'Outlets, switches & GFCIs',
+    text: 'New outlets where you actually need them, USB-C and smart switches, GFCI protection in kitchens, baths and outdoors, and two-prong outlets brought up to date.',
+    list: ['Added circuits where one is doing too much', 'GFCI and AFCI protection where the code calls for it', 'Cover plates straight, flush and level'],
+    note: 'swapping a two-prong outlet for a three-prong one without a ground isn’t safe on its own. There are proper ways to fix it.',
+    img: IMG('1587534012737-1fd8a84b519e'), alt: 'A white duplex wall outlet on a teal painted wall' },
+  { id: 'data', label: 'Data & network cabling', title: 'Data & network cabling',
+    text: 'Wired internet to offices, TVs and access points, a tidy network panel, and cabling for cameras and doorbells, so Wi-Fi isn’t doing all the work.',
+    list: ['Cat6 runs to the rooms that need them', 'A structured network panel to keep it organized', 'Wiring for cameras, doorbells and access points'],
+    note: 'during a renovation or new build, data runs cost a fraction of what they do once the walls are closed.',
+    img: IMG('1652715564391-38cc4475b7f5'), alt: 'Wiring and breakers inside an electrical panel' }
 ];
-
-const TRIAGE = {
-  burn: { sev: 'now', sevText: 'Emergency', title: 'Burning smell or smoke',
-    steps: ['If you see smoke or flames, get everyone out and call 911.', 'If the smell is strong or you can’t find where it’s coming from, leave and call 911 from outside.', 'If it’s a faint smell from one spot and you can reach the panel safely, switch off that breaker, or the main. Don’t reset it until an electrician has checked the circuit.'],
-    dont: 'Don’t touch outlets, plates or cords that feel hot, and never throw water on an electrical fire.',
-    msg: 'There has been a burning smell from an outlet, switch or the panel.' },
-  hot: { sev: 'today', sevText: 'Call today', title: 'Outlet hot, buzzing or sparking',
-    steps: ['Stop using that outlet or switch.', 'Switch off its breaker at the panel before unplugging anything from it.', 'Note which room and what was plugged in. It helps find the fault quickly.'],
-    dont: 'Don’t keep using a warm or buzzing outlet “just for now”. Heat at an outlet means a loose or failing connection.',
-    msg: 'An outlet or switch has been hot, buzzing or sparking.' },
-  trip: { sev: 'soon', sevText: 'Book soon', title: 'Breaker keeps tripping',
-    steps: ['Unplug everything on that circuit, then reset the breaker once: push it fully to OFF, then ON.', 'Plug things back in one at a time. If one device trips it, that device is the problem.', 'If it trips with nothing plugged in, leave it off. That points to a wiring fault.'],
-    dont: 'Don’t hold a breaker on, tape it, or swap in a bigger one. It’s sized to protect the wire.',
-    msg: 'A breaker keeps tripping.' },
-  flicker: { sev: 'soon', sevText: 'Book soon', title: 'Lights flicker or dim',
-    steps: ['One light flickering? Try a new bulb, and check that it suits the dimmer.', 'A whole room or circuit? Note when it happens, e.g. when the furnace or dryer starts.', 'The whole house dims or flickers? Call your local utility too. The problem may be on their side.'],
-    dont: 'Don’t ignore flickering that comes with a burning smell or a warm switch plate. That’s urgent: switch that circuit off.',
-    msg: 'My lights are flickering or dimming.' },
-  dead: { sev: 'soon', sevText: 'Check first', title: 'Part of the house has no power',
-    steps: ['Check the panel for a breaker sitting in the middle position. Push it to OFF, then ON.', 'Press the RESET button on GFCI outlets in bathrooms, the kitchen, garage and outside. One GFCI can feed several outlets.', 'Still dead? Book a visit. It may be a loose connection.'],
-    dont: 'Don’t open the panel cover or remove outlet plates to look for the problem.',
-    msg: 'Part of my house has no power.' },
-  water: { sev: 'now', sevText: 'Emergency', title: 'Water near wiring or the panel',
-    steps: ['Keep everyone out of water that is near outlets, cords or the panel.', 'If the panel is dry and you can reach it without standing in water, switch off the main breaker.', 'If the panel is wet or you’d have to stand in water, don’t touch it. Call your utility to cut power, or 911 if anyone is at risk.'],
-    dont: 'Don’t use anything that has been under water, even after it dries, until it’s been checked.',
-    msg: 'There has been water near the wiring or the panel.' }
-};
 
 const $ = (s, r = document) => r.querySelector(s);
 const $$ = (s, r = document) => [...r.querySelectorAll(s)];
@@ -133,7 +126,7 @@ function header() {
 
 /* ---------- panel: breakers = services ---------- */
 const selected = new Set();
-let current = 'panel';
+let current = SERVICES[0].id;
 const label = id => (SERVICES.find(s => s.id === id) || { label: 'Something else' }).label;
 
 function panel() {
@@ -174,7 +167,7 @@ function panel() {
     setTimeout(() => {
       const img = $('#circuitImg');
       img.src = s.img; img.alt = s.alt;
-      $('#circuitNo').textContent = 'Circuit ' + String(SERVICES.indexOf(s) + 1).padStart(2, '0');
+      $('#circuitNo').textContent = 'Circuit ' + (SERVICES.indexOf(s) + 1);
       $('#circuitTitle').textContent = s.title;
       $('#circuitText').textContent = s.text;
       $('#circuitList').innerHTML = s.list.map(li => `<li>${li}</li>`).join('');
@@ -224,6 +217,7 @@ function chipsSync() { $$('.chip').forEach(c => c.setAttribute('aria-pressed', s
 function beforeAfter() {
   const ba = $('#ba'), r = $('#baRange');
   const set = v => ba.style.setProperty('--pos', v + '%');
+  const base = +r.value;
   r.addEventListener('input', () => set(r.value));
   if (!reduce && 'IntersectionObserver' in window) {
     const io = new IntersectionObserver(([e]) => {
@@ -232,7 +226,7 @@ function beforeAfter() {
       const step = ts => {
         if (t0 === null) t0 = ts;
         const k = Math.min((ts - t0) / 1600, 1);
-        const v = 50 + Math.sin(k * Math.PI * 2) * 18 * (1 - k);
+        const v = base + Math.sin(k * Math.PI * 2) * 14 * (1 - k);
         set(v); r.value = v;
         if (k < 1) requestAnimationFrame(step);
       };
@@ -255,42 +249,6 @@ function process() {
     });
   };
   addEventListener('scroll', onScroll, { passive: true }); addEventListener('resize', onScroll); onScroll();
-}
-
-/* ---------- safety triage ---------- */
-let lastTriageMsg = '';
-function triage() {
-  const box = $('#advice'), home = box.parentNode;
-  $$('.sym').forEach(b => b.addEventListener('click', () => {
-    $$('.sym').forEach(x => x.setAttribute('aria-pressed', x === b));
-    const t = TRIAGE[b.dataset.sym], now = t.sev === 'now';
-    const call = CONFIG.PHONE ? `<a class="btn ${now ? 'btn-ghost' : 'btn-gold'}" href="${telHref(CONFIG.PHONE)}">Call ${CONFIG.PHONE}</a>` : '';
-    const acts = now
-      ? `<a class="btn btn-danger" href="tel:911">Call 911</a>${call}<button type="button" class="btn btn-outline" data-send>Message Heath Electric</button><span class="btn-small-note">A message is not an emergency call. If there’s danger, call 911 or your local utility first.</span>`
-      : `${call}<button type="button" class="btn ${call ? 'btn-ghost' : 'btn-gold'}" data-send>Send this to Heath Electric</button>`;
-    box.innerHTML = `
-      <span class="sev sev-${t.sev}">${t.sevText}</span>
-      <h3>${t.title}</h3>
-      <ol>${t.steps.map(s => `<li>${s}</li>`).join('')}</ol>
-      <p class="dont"><b>Don’t:</b> ${t.dont.replace(/^Don’t /, '')}</p>
-      <div class="acts">${acts}</div>
-      <p class="fine">General safety guidance only. If anyone is in danger, call 911.</p>`;
-    if (narrow()) {
-      if (b.nextElementSibling !== box) b.after(box);
-      setTimeout(() => box.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'nearest' }), 60);
-    } else if (box.parentNode !== home) home.appendChild(box);
-    $('[data-send]', box).addEventListener('click', () => {
-      selected.add('trouble'); panel.sync();
-      const m = $('#f-msg');
-      let rest = m.value;
-      if (lastTriageMsg && rest.startsWith(lastTriageMsg)) rest = rest.slice(lastTriageMsg.length).replace(/^\n+/, '');
-      m.value = t.msg + (rest ? '\n\n' + rest : '\n\n');
-      lastTriageMsg = t.msg;
-      if (t.sev !== 'soon') { const asap = $('input[name="when"][value="As soon as possible"]'); if (asap) asap.checked = true; }
-      goForm();
-    });
-  }));
-  matchMedia('(max-width:1080px)').addEventListener('change', () => { if (!narrow() && box.parentNode !== home) home.appendChild(box); });
 }
 
 /* ---------- quote form ---------- */
@@ -327,9 +285,20 @@ function form() {
   });
 }
 
+/* ---------- job photo lightbox ---------- */
+function lightbox() {
+  const dlg = $('#lb'); if (!dlg || !dlg.showModal) return;
+  $$('.job-open').forEach(b => b.addEventListener('click', () => {
+    const img = $('img', b), cap = b.parentNode.querySelector('.f-label').textContent;
+    $('#lbImg').src = b.dataset.full; $('#lbImg').alt = img.alt; $('#lbCap').textContent = cap;
+    dlg.showModal();
+  }));
+  dlg.addEventListener('click', e => { if (e.target === dlg) dlg.close(); });
+}
+
 /* ---------- reveal on scroll ---------- */
 function reveal() {
-  const els = $$('.sec-head, .panel, .circuit, .ba, .frame, .step, .triage, .about-copy, .about-photo, .qa, .qform, .quote-side, .quote-info');
+  const els = $$('.sec-head, .panel, .circuit, .ba, .frame, .step, .about-copy, .about-photo, .qa, .qform, .quote-side, .quote-info');
   if (reduce || !('IntersectionObserver' in window)) return;
   els.forEach(el => el.classList.add('rv'));
   const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { rootMargin: '0px 0px -8% 0px' });
@@ -338,4 +307,4 @@ function reveal() {
   addEventListener('beforeprint', () => els.forEach(el => el.classList.add('in')));
 }
 
-fillFacts(); header(); chips(); panel(); beforeAfter(); process(); triage(); form(); reveal();
+fillFacts(); header(); lightbox(); chips(); panel(); beforeAfter(); process(); form(); reveal();

@@ -491,3 +491,47 @@ a.btn-await::before{display:none}
 .hero-creds svg{width:15px;height:15px;flex:none;fill:var(--gold)}
 .hero-creds p{margin:12px 0 0;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
 @media (max-width:680px){.hero-creds ul{flex-direction:column;gap:9px}}
+
+/* revision 3: recent-job photos in the hero, numbered 12-circuit schedule */
+@media (min-width:1081px){.hero-in{grid-template-columns:minmax(0,1.12fr) minmax(0,.88fr);gap:56px}}
+.hero-jobs{width:100%}
+.jobs-k{display:flex;align-items:center;gap:10px;margin:0 0 14px;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+.hero-frames{grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.hero-frames .frame{aspect-ratio:1/1;padding:14px;gap:8px;background-color:#0C0E0C;backdrop-filter:blur(2px)}
+.hero-frames .f-corners{inset:10px}
+.hero-frames .f-ico{width:32px;height:32px}
+.hero-frames .f-label{font-size:clamp(14px,1.25vw,17px)}
+.hero-frames .frame .mono{font-size:10px}
+.frame img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.brk-no{font-size:12px;font-weight:500;color:#D7DBD4}
+@media (min-width:681px){.brk-label{padding-top:14px}}
+@media (max-width:1080px){.hero-jobs{max-width:640px;margin-top:8px}}
+@media (max-width:680px){
+  .hero-frames{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+  .hero-frames .frame{aspect-ratio:4/3}
+  .hero-frames .f-label{font-size:16px}
+}
+
+/* revision 4: Julian's photos, lightbox, portrait before/after */
+.frame.has-photo{padding:0;justify-content:flex-end;border:1px solid rgba(254,209,0,.28)}
+.job-open{position:absolute;inset:0;padding:0;border:0;background:#0C0E0C;cursor:zoom-in;overflow:hidden;border-radius:inherit}
+.job-open img{width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease)}
+.frame.has-photo:hover .job-open img{transform:scale(1.05)}
+.job-open:focus-visible{outline:2px solid var(--gold);outline-offset:-4px}
+.frame.has-photo .f-label{position:relative;z-index:1;width:100%;margin:0;padding:30px 10px 10px;text-align:left;background:linear-gradient(transparent,rgba(5,6,5,.88));pointer-events:none}
+@media (max-width:680px){.hero-frames .frame{aspect-ratio:4/5}}
+.lb{padding:0;border:0;background:transparent;max-width:min(94vw,980px);max-height:94vh;overflow:visible}
+.lb::backdrop{background:rgba(4,5,4,.88);backdrop-filter:blur(4px)}
+.lb img{display:block;max-width:100%;max-height:84vh;width:auto;height:auto;margin:0 auto;border-radius:12px;box-shadow:0 30px 80px rgba(0,0,0,.6)}
+.lb-cap{margin:12px 0 0;text-align:center;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold)}
+.lb-x{position:absolute;top:-14px;right:-14px;z-index:2;width:44px;height:44px;border-radius:50%;border:2px solid var(--gold);background:var(--ink);color:#fff;font:400 26px/1 var(--sans);cursor:pointer}
+@media (max-width:680px){.lb-x{top:-52px;right:0}}
+.ba{aspect-ratio:3/4;max-width:min(520px,100%);margin-inline:auto}
+.ba-before{filter:none}
+.ba-await{display:flex;flex-direction:column;align-items:flex-end;justify-content:center;gap:10px;padding:0 9% 0 0;text-align:right;
+  background:linear-gradient(rgba(254,209,0,.05) 1px,transparent 1px) 0 0/22px 22px,linear-gradient(90deg,rgba(254,209,0,.05) 1px,transparent 1px) 0 0/22px 22px,linear-gradient(160deg,#141714,#0C0E0C)}
+.ba-await .mono{margin:0;font-size:11px}
+.ba-await .f-label{margin:0;font-size:28px}
+.ba-await .f-ico{width:40px;height:40px}
+.ba-await{padding-right:5%}
+.ba-await .mono{font-size:10px;letter-spacing:.12em}

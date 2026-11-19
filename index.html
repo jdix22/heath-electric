@@ -25,27 +25,32 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://images.unsplash.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
-<link rel="stylesheet" href="assets/css/site.css?v=6">
+<link rel="stylesheet" href="assets/css/site.css?v=8">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Electrician",
   "name": "Heath Electric Inc.",
   "url": "https://heathelectric.ca/",
+  "telephone": "+1-647-895-5693",
   "logo": "https://heathelectric.ca/favicon.svg",
   "image": "https://heathelectric.ca/assets/og.png",
   "description": "Heath Electric Inc. is a licensed and insured electrical contractor (ECRA/ESA Licence #7018901) providing residential and commercial electrical services in Toronto and the GTA: lighting installations, pot lights, dedicated circuits, panel upgrades, EV chargers, troubleshooting and complete electrical renovations.",
   "areaServed": [{"@type": "City", "name": "Toronto"}, {"@type": "AdministrativeArea", "name": "Greater Toronto Area"}],
   "hasCredential": {"@type": "EducationalOccupationalCredential", "credentialCategory": "license", "name": "ECRA/ESA Licensed Electrical Contractor", "identifier": "7018901", "recognizedBy": {"@type": "Organization", "name": "Electrical Safety Authority"}},
   "makesOffer": [
-    {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Panel upgrades and replacements"}},
+    {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Troubleshooting and repairs"}},
+    {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Residential electrical"}},
+    {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Lighting, pot lights and dimmers"}},
+    {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Commercial electrical"}},
+    {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Panel and service upgrades"}},
+    {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Renovations and additions"}},
     {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "EV charger installation"}},
-    {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Pot lights and light fixtures"}},
+    {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Custom homes and new builds"}},
+    {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Dedicated circuits"}},
+    {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Hot tubs, outdoor and garage power"}},
     {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Outlets, switches and GFCIs"}},
-    {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Renovation and basement wiring"}},
-    {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Electrical troubleshooting and repairs"}},
-    {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Smoke and CO alarm installation"}},
-    {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Outdoor, garage and hot tub power"}}
+    {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Data and network cabling"}}
   ]
 }
 </script>
@@ -86,7 +91,6 @@
       <a href="#services">Services</a>
       <a href="#work">Our work</a>
       <a href="#process">How it works</a>
-      <a href="#safety">Safety</a>
       <a href="#faq">FAQ</a>
     </nav>
     <a class="btn btn-gold head-cta" href="#qform"><svg aria-hidden="true"><use href="#bolt"></use></svg><span class="cta-l">Get a quote</span><span class="cta-s">Quote</span></a>
@@ -100,7 +104,6 @@
     <a href="#services">Services</a>
     <a href="#work">Our work</a>
     <a href="#process">How it works</a>
-    <a href="#safety">Something wrong?</a>
     <a href="#faq">FAQ</a>
     <a class="btn btn-gold" href="#quote">Get a quote</a>
   </nav>
@@ -132,30 +135,19 @@
           <li><svg aria-hidden="true"><use href="#bolt"></use></svg>Master Electrician</li>
           <li><svg aria-hidden="true"><use href="#bolt"></use></svg>Insured</li>
         </ul>
-        <p class="mono">ECRA/ESA Lic. #7018901</p>
+        <p class="mono">ECRA/ESA Licence #7018901</p>
       </div>
     </div>
-    <div class="hero-dir">
-      <div class="dir-card">
-        <div class="dir-head">
-          <svg class="dir-mark" aria-hidden="true"><use href="#mark"></use></svg>
-          <div>
-            <p class="mono">Heath Electric</p>
-            <p class="mono dir-sub">Panel directory</p>
-          </div>
-        </div>
-        <ol class="dir-list" aria-label="Services: pick one to start your quote">
-          <li><a href="#services" data-pick="panel"><span aria-hidden="true">01</span>Panel upgrades</a></li>
-          <li><a href="#services" data-pick="ev"><span aria-hidden="true">02</span>EV chargers</a></li>
-          <li><a href="#services" data-pick="lighting"><span aria-hidden="true">03</span>Pot lights &amp; fixtures</a></li>
-          <li><a href="#services" data-pick="outlets"><span aria-hidden="true">04</span>Outlets &amp; switches</a></li>
-          <li><a href="#services" data-pick="reno"><span aria-hidden="true">05</span>Reno &amp; basement</a></li>
-          <li><a href="#services" data-pick="trouble"><span aria-hidden="true">06</span>Troubleshooting</a></li>
-          <li><a href="#services" data-pick="alarms"><span aria-hidden="true">07</span>Smoke &amp; CO alarms</a></li>
-          <li><a href="#services" data-pick="outdoor"><span aria-hidden="true">08</span>Outdoor &amp; hot tub</a></li>
-        </ol>
-        <p class="dir-foot mono">Pick a circuit to start your quote</p>
-      </div>
+    <div class="hero-jobs">
+      <p class="jobs-k mono"><span class="led" aria-hidden="true"></span>Recent jobs</p>
+      <ul class="frames hero-frames" aria-label="Recent jobs">
+        <li class="frame has-photo"><button type="button" class="job-open" data-full="assets/img/job-panel-upgrade.jpg" aria-label="View larger: Panel upgrade"><img src="assets/img/job-panel-upgrade.jpg" alt="A new 200 A Eaton panel with every circuit labelled" width="750" height="1000" decoding="async"></button><p class="f-label">Panel upgrade</p></li>
+        <li class="frame has-photo"><button type="button" class="job-open" data-full="assets/img/job-ev-charger.jpg" aria-label="View larger: EV charger install"><img src="assets/img/job-ev-charger.jpg" style="object-position:8% 50%" alt="A Tesla wall charger in a garage, fed by conduit run neatly along the wall" width="1000" height="750" decoding="async"></button><p class="f-label">EV charger install</p></li>
+        <li class="frame has-photo"><button type="button" class="job-open" data-full="assets/img/job-outlets.jpg" aria-label="View larger: Outlets and GFCIs"><img src="assets/img/job-outlets.jpg" alt="A new outlet installed below a light switch beside a closet door" width="750" height="1000" decoding="async"></button><p class="f-label">Outlets &amp; GFCIs</p></li>
+        <li class="frame has-photo"><button type="button" class="job-open" data-full="assets/img/job-pot-lights.jpg" aria-label="View larger: Indoor pot lights"><img src="assets/img/job-pot-lights.jpg" alt="A row of pot lights washing a living room wall" width="750" height="1000" decoding="async"></button><p class="f-label">Indoor pot lights</p></li>
+        <li class="frame has-photo"><button type="button" class="job-open" data-full="assets/img/job-exterior-lights.jpg" aria-label="View larger: Exterior lighting"><img src="assets/img/job-exterior-lights.jpg" alt="A brick house at night lit by soffit pot lights and lanterns beside the garage" width="750" height="1000" decoding="async"></button><p class="f-label">Exterior lighting</p></li>
+        <li class="frame has-photo"><button type="button" class="job-open" data-full="assets/img/job-mood-lights.jpg" aria-label="View larger: Mood lighting"><img src="assets/img/job-mood-lights.jpg" alt="A slat feature wall with green and gold LED strip lighting around a TV" width="750" height="1000" decoding="async"></button><p class="f-label">Mood lighting</p></li>
+      </ul>
     </div>
   </div>
   <svg class="hero-wire" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true">
@@ -177,8 +169,8 @@
       <div class="panel" id="panel">
         <div class="panel-top">
           <div class="panel-plate">
-            <span class="mono">Heath Electric</span>
-            <span class="mono dim">Panel directory</span>
+            <span class="mono">Heath Electric Inc.</span>
+            <span class="mono dim">Panel schedule</span>
           </div>
           <div class="panel-status">
             <span class="status-led" aria-hidden="true"></span>
@@ -188,14 +180,18 @@
         <div class="breakers" role="group" aria-label="Services. Switch on the ones you need.">
           <div class="busbar" aria-hidden="true"></div>
           <!-- breakers are built from the SERVICES list in site.js; these are the no-script fallback -->
-          <button class="brk" type="button" aria-pressed="false" data-id="panel"><span class="brk-no" aria-hidden="true">01</span><span class="brk-label">Panel upgrades</span><span class="brk-body"><span class="brk-lever"></span><span class="brk-flag" aria-hidden="true">Off</span></span></button>
-          <button class="brk" type="button" aria-pressed="false" data-id="ev"><span class="brk-no" aria-hidden="true">02</span><span class="brk-label">EV chargers</span><span class="brk-body"><span class="brk-lever"></span><span class="brk-flag" aria-hidden="true">Off</span></span></button>
-          <button class="brk" type="button" aria-pressed="false" data-id="lighting"><span class="brk-no" aria-hidden="true">03</span><span class="brk-label">Pot lights &amp; fixtures</span><span class="brk-body"><span class="brk-lever"></span><span class="brk-flag" aria-hidden="true">Off</span></span></button>
-          <button class="brk" type="button" aria-pressed="false" data-id="outlets"><span class="brk-no" aria-hidden="true">04</span><span class="brk-label">Outlets &amp; switches</span><span class="brk-body"><span class="brk-lever"></span><span class="brk-flag" aria-hidden="true">Off</span></span></button>
-          <button class="brk" type="button" aria-pressed="false" data-id="reno"><span class="brk-no" aria-hidden="true">05</span><span class="brk-label">Reno &amp; basement</span><span class="brk-body"><span class="brk-lever"></span><span class="brk-flag" aria-hidden="true">Off</span></span></button>
-          <button class="brk" type="button" aria-pressed="false" data-id="trouble"><span class="brk-no" aria-hidden="true">06</span><span class="brk-label">Troubleshooting</span><span class="brk-body"><span class="brk-lever"></span><span class="brk-flag" aria-hidden="true">Off</span></span></button>
-          <button class="brk" type="button" aria-pressed="false" data-id="alarms"><span class="brk-no" aria-hidden="true">07</span><span class="brk-label">Smoke &amp; CO alarms</span><span class="brk-body"><span class="brk-lever"></span><span class="brk-flag" aria-hidden="true">Off</span></span></button>
-          <button class="brk" type="button" aria-pressed="false" data-id="outdoor"><span class="brk-no" aria-hidden="true">08</span><span class="brk-label">Outdoor &amp; hot tub</span><span class="brk-body"><span class="brk-lever"></span><span class="brk-flag" aria-hidden="true">Off</span></span></button>
+          <button class="brk" type="button" aria-pressed="false" data-id="trouble"><span class="brk-no" aria-hidden="true">1</span><span class="brk-label">Troubleshooting &amp; repairs</span><span class="brk-body"><span class="brk-lever"></span><span class="brk-flag" aria-hidden="true">Off</span></span></button>
+          <button class="brk" type="button" aria-pressed="false" data-id="residential"><span class="brk-no" aria-hidden="true">2</span><span class="brk-label">Residential electrical</span><span class="brk-body"><span class="brk-lever"></span><span class="brk-flag" aria-hidden="true">Off</span></span></button>
+          <button class="brk" type="button" aria-pressed="false" data-id="lighting"><span class="brk-no" aria-hidden="true">3</span><span class="brk-label">Lighting &amp; pot lights</span><span class="brk-body"><span class="brk-lever"></span><span class="brk-flag" aria-hidden="true">Off</span></span></button>
+          <button class="brk" type="button" aria-pressed="false" data-id="commercial"><span class="brk-no" aria-hidden="true">4</span><span class="brk-label">Commercial electrical</span><span class="brk-body"><span class="brk-lever"></span><span class="brk-flag" aria-hidden="true">Off</span></span></button>
+          <button class="brk" type="button" aria-pressed="false" data-id="panel"><span class="brk-no" aria-hidden="true">5</span><span class="brk-label">Panel &amp; service upgrades</span><span class="brk-body"><span class="brk-lever"></span><span class="brk-flag" aria-hidden="true">Off</span></span></button>
+          <button class="brk" type="button" aria-pressed="false" data-id="reno"><span class="brk-no" aria-hidden="true">6</span><span class="brk-label">Renovations &amp; additions</span><span class="brk-body"><span class="brk-lever"></span><span class="brk-flag" aria-hidden="true">Off</span></span></button>
+          <button class="brk" type="button" aria-pressed="false" data-id="ev"><span class="brk-no" aria-hidden="true">7</span><span class="brk-label">EV charger installation</span><span class="brk-body"><span class="brk-lever"></span><span class="brk-flag" aria-hidden="true">Off</span></span></button>
+          <button class="brk" type="button" aria-pressed="false" data-id="newbuild"><span class="brk-no" aria-hidden="true">8</span><span class="brk-label">Custom homes &amp; new builds</span><span class="brk-body"><span class="brk-lever"></span><span class="brk-flag" aria-hidden="true">Off</span></span></button>
+          <button class="brk" type="button" aria-pressed="false" data-id="dedicated"><span class="brk-no" aria-hidden="true">9</span><span class="brk-label">Dedicated circuits</span><span class="brk-body"><span class="brk-lever"></span><span class="brk-flag" aria-hidden="true">Off</span></span></button>
+          <button class="brk" type="button" aria-pressed="false" data-id="outdoor"><span class="brk-no" aria-hidden="true">10</span><span class="brk-label">Hot tubs &amp; outdoor power</span><span class="brk-body"><span class="brk-lever"></span><span class="brk-flag" aria-hidden="true">Off</span></span></button>
+          <button class="brk" type="button" aria-pressed="false" data-id="outlets"><span class="brk-no" aria-hidden="true">11</span><span class="brk-label">Outlets, switches &amp; GFCIs</span><span class="brk-body"><span class="brk-lever"></span><span class="brk-flag" aria-hidden="true">Off</span></span></button>
+          <button class="brk" type="button" aria-pressed="false" data-id="data"><span class="brk-no" aria-hidden="true">12</span><span class="brk-label">Data &amp; network cabling</span><span class="brk-body"><span class="brk-lever"></span><span class="brk-flag" aria-hidden="true">Off</span></span></button>
         </div>
         <div class="panel-foot">
           <p class="mono dim" id="panelHint">Each service you switch on goes into your quote.</p>
@@ -207,20 +203,20 @@
       <p class="sr" id="panelLive" aria-live="polite"></p>
       <article class="circuit" id="circuit">
         <div class="circuit-media" id="circuitMedia">
-          <img id="circuitImg" src="https://images.unsplash.com/photo-1660330589693-99889d60181e?w=1100&q=70&auto=format&fit=crop" alt="An electrician working inside an open residential breaker panel" width="1100" height="700" loading="lazy">
+          <img id="circuitImg" src="https://images.unsplash.com/photo-1758101755915-462eddc23f57?w=1100&q=70&auto=format&fit=crop" alt="An electrician testing a breaker panel with a multimeter" width="1100" height="700" loading="lazy">
           <span class="filler-tag">Stock photo</span>
         </div>
         <div class="circuit-body">
-          <p class="mono gold" id="circuitNo">Circuit 01</p>
-          <h3 id="circuitTitle">Panel upgrades &amp; replacements</h3>
-          <p id="circuitText">Moving from 100 A to 200 A, replacing an old fuse box or a panel your insurer has flagged, or adding a sub-panel for a basement, garage or addition.</p>
+          <p class="mono gold" id="circuitNo">Circuit 1</p>
+          <h3 id="circuitTitle">Troubleshooting &amp; repairs</h3>
+          <p id="circuitText">Breakers that keep tripping, outlets that died, lights that flicker, switches that buzz or feel warm. Found, explained and fixed.</p>
           <ul class="ticks" id="circuitList">
-            <li>Load check on what your home draws today and what you plan to add</li>
-            <li>Coordination with your utility for the disconnect and reconnect</li>
-            <li>New breakers and a clean, organized panel</li>
+            <li>Fault traced with proper testing, not guesswork</li>
+            <li>A plain explanation of what failed and why</li>
+            <li>A fix price before the repair starts</li>
           </ul>
-          <p class="note" id="circuitNote"><b>Good to know:</b> panel replacements always need an ESA permit and inspection. You'll know what your job needs before you agree to anything.</p>
-          <button class="btn btn-outline" type="button" id="circuitToggle" data-id="panel">Switch on: add to my quote</button>
+          <p class="note" id="circuitNote"><b>Good to know:</b> if something smells hot or you see scorch marks, switch off that breaker and don’t reset it until it’s been checked.</p>
+          <button class="btn btn-outline" type="button" id="circuitToggle" data-id="trouble">Switch on: add to my quote</button>
         </div>
       </article>
     </div>
@@ -233,33 +229,24 @@
     <div class="sec-head">
       <p class="eyebrow"><span>02</span> Our work</p>
       <h2 id="work-h">Before. After. Drag to see the difference.</h2>
-      <p class="sec-lede">Heath Electric's own before and after photos are on the way. The pair below is a stand-in to show how this will work.</p>
+      <p class="sec-lede">Real photos from Heath Electric jobs. This before shot is in; its after photo is on the way.</p>
     </div>
 
-    <figure class="ba" id="ba" style="--pos:50%">
-      <div class="awaiting-banner"><svg aria-hidden="true"><use href="#bolt"></use></svg>Filler photos: awaiting Heath Electric's before &amp; after shots</div>
-      <img class="ba-img ba-before" src="https://images.unsplash.com/photo-1613315622081-3b066dbe5d83?w=1600&q=70&auto=format&fit=crop" alt="Before: a rusted old breaker box on a peeling wall" width="1600" height="1000" loading="lazy">
-      <img class="ba-img ba-after" src="https://images.unsplash.com/photo-1576446470246-499c738d1c8e?w=1600&q=70&auto=format&fit=crop" alt="After: a neat row of new white breakers with wiring dressed along the rails" width="1600" height="1000" loading="lazy">
+    <figure class="ba" id="ba" style="--pos:70%">
+      <div class="awaiting-banner"><svg aria-hidden="true"><use href="#bolt"></use></svg>Before photo from a Heath Electric job. The after photo is on its way.</div>
+      <img class="ba-img ba-before" src="assets/img/ba-before.jpg" alt="Before: a hallway wall with a light switch beside a closet door" width="1050" height="1400" loading="lazy" decoding="async">
+      <div class="ba-img ba-after ba-await" role="img" aria-label="After photo coming soon"><svg class="f-ico" viewBox="0 0 48 48" aria-hidden="true"><rect x="5" y="13" width="38" height="27" rx="4"/><circle cx="24" cy="26" r="8"/><path d="M17 13l3-5h8l3 5"/></svg><p class="mono gold">Awaiting photo</p><p class="f-label">After</p></div>
       <span class="ba-tag ba-tag-b">Before</span>
       <span class="ba-tag ba-tag-a">After</span>
       <div class="ba-handle" aria-hidden="true"><span><svg><use href="#bolt"></use></svg></span></div>
       <label class="sr" for="baRange">Before and after comparison: move to reveal more of the after photo</label>
-      <input class="ba-range" id="baRange" type="range" min="0" max="100" value="50">
+      <input class="ba-range" id="baRange" type="range" min="0" max="100" value="70">
       <figcaption class="ba-cap">
         <span class="mono gold">The job</span>
-        <span>Job description, location and what was done will appear here with each of Heath Electric's photos.</span>
+        <span>A Heath Electric job before the work started. Drag across once the after photo is in to see the finished result.</span>
       </figcaption>
     </figure>
 
-    <h3 class="sub-h">Recent jobs</h3>
-    <ul class="frames" aria-label="Job photos, awaiting">
-      <li class="frame"><span class="f-corners" aria-hidden="true"></span><svg class="f-ico" viewBox="0 0 48 48" aria-hidden="true"><rect x="10" y="6" width="28" height="36" rx="3"/><path d="M17 14h6M17 20h6M17 26h6M17 32h6M27 14h4M27 20h4M27 26h4M27 32h4"/></svg><p class="mono gold">Awaiting photo</p><p class="f-label">Panel upgrade</p></li>
-      <li class="frame"><span class="f-corners" aria-hidden="true"></span><svg class="f-ico" viewBox="0 0 48 48" aria-hidden="true"><rect x="14" y="6" width="20" height="28" rx="4"/><path d="M24 34v4c0 3 3 4 6 4h8M20 16l6-1-3 6 6-1"/></svg><p class="mono gold">Awaiting photo</p><p class="f-label">EV charger install</p></li>
-      <li class="frame"><span class="f-corners" aria-hidden="true"></span><svg class="f-ico" viewBox="0 0 48 48" aria-hidden="true"><path d="M4 10h40M12 10v4M24 10v4M36 10v4"/><circle cx="12" cy="18" r="3"/><circle cx="24" cy="18" r="3"/><circle cx="36" cy="18" r="3"/><path d="M8 40l4-14M24 42V26M40 40l-4-14"/></svg><p class="mono gold">Awaiting photo</p><p class="f-label">Kitchen pot lights</p></li>
-      <li class="frame"><span class="f-corners" aria-hidden="true"></span><svg class="f-ico" viewBox="0 0 48 48" aria-hidden="true"><path d="M6 42V18L24 6l18 12v24"/><path d="M6 30h36M18 42V30M30 42V30"/></svg><p class="mono gold">Awaiting photo</p><p class="f-label">Basement rough-in</p></li>
-      <li class="frame"><span class="f-corners" aria-hidden="true"></span><svg class="f-ico" viewBox="0 0 48 48" aria-hidden="true"><rect x="12" y="3" width="24" height="42" rx="4"/><rect x="16" y="8" width="16" height="14" rx="5"/><rect x="16" y="26" width="16" height="14" rx="5"/><path d="M21 12v4M27 12v4M21 30v4M27 30v4"/><circle cx="24" cy="19" r="1.2"/><circle cx="24" cy="37" r="1.2"/></svg><p class="mono gold">Awaiting photo</p><p class="f-label">Outlets &amp; GFCIs</p></li>
-      <li class="frame"><span class="f-corners" aria-hidden="true"></span><svg class="f-ico" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="22" r="10"/><path d="M24 4v4M24 36v8M6 22h4M38 22h4M11 9l3 3M37 9l-3 3"/></svg><p class="mono gold">Awaiting photo</p><p class="f-label">Exterior lighting</p></li>
-    </ul>
   </div>
 </section>
 
@@ -299,33 +286,6 @@
   </div>
 </section>
 
-<!-- SAFETY TRIAGE -->
-<section class="sec safety" id="safety" aria-labelledby="safety-h">
-  <div class="wrap safety-in">
-    <div class="sec-head">
-      <p class="eyebrow"><span>04</span> Safety</p>
-      <h2 id="safety-h">Something wrong right now? Start here.</h2>
-      <p class="sec-lede">General safety guidance for common problems. If anyone is in danger, call 911.</p>
-    </div>
-    <div class="triage">
-      <div class="symptoms" role="group" aria-label="What are you seeing?">
-        <button type="button" class="sym" aria-pressed="false" data-sym="burn">Burning smell or smoke</button>
-        <button type="button" class="sym" aria-pressed="false" data-sym="hot">Outlet hot, buzzing or sparking</button>
-        <button type="button" class="sym" aria-pressed="false" data-sym="trip">Breaker keeps tripping</button>
-        <button type="button" class="sym" aria-pressed="false" data-sym="flicker">Lights flicker or dim</button>
-        <button type="button" class="sym" aria-pressed="false" data-sym="dead">Part of the house has no power</button>
-        <button type="button" class="sym" aria-pressed="false" data-sym="water">Water near wiring or the panel</button>
-      </div>
-      <div class="advice" id="advice" aria-live="polite">
-        <div class="advice-empty">
-          <svg aria-hidden="true"><use href="#bolt"></use></svg>
-          <p>Pick what you're seeing for the first steps to take, how urgent it is, and a one-tap message to send with the details filled in.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- ABOUT -->
 <section class="sec about" id="about" aria-labelledby="about-h">
   <div class="wrap about-in">
@@ -335,7 +295,7 @@
       <p class="about-await"><span class="await">Awaiting photo: the electrician behind Heath Electric</span></p>
     </div>
     <div class="about-copy">
-      <p class="eyebrow"><span>05</span> About</p>
+      <p class="eyebrow"><span>04</span> About</p>
       <h2 id="about-h">Meet the electrician.</h2>
       <p class="big">Heath Electric is an independent electrical contractor. The person who quotes your job is the person who does it: no hand-offs, no crew you've never met, and one number to call if you ever have a question about the work.</p>
       <p>That's the whole idea behind the company: careful work, a tidy job site, and straight answers whenever you ask.</p>
@@ -352,7 +312,7 @@
 <section class="sec faq" id="faq" aria-labelledby="faq-h">
   <div class="wrap faq-in">
     <div class="sec-head">
-      <p class="eyebrow"><span>06</span> FAQ</p>
+      <p class="eyebrow"><span>05</span> FAQ</p>
       <h2 id="faq-h">Questions people ask before they call.</h2>
     </div>
     <div class="qa">
@@ -388,7 +348,7 @@
 <section class="sec quote" id="quote" aria-labelledby="quote-h">
   <div class="wrap quote-in">
     <div class="quote-side">
-      <p class="eyebrow"><span>07</span> Get a quote</p>
+      <p class="eyebrow"><span>06</span> Get a quote</p>
       <h2 id="quote-h">Tell us about the job.</h2>
       <p class="sec-lede">The more detail you send, the more accurate your quote will be.</p>
     </div>
@@ -437,6 +397,12 @@
 
 </main>
 
+<dialog class="lb" id="lb" aria-label="Job photo">
+  <form method="dialog"><button class="lb-x" aria-label="Close photo">&times;</button></form>
+  <img id="lbImg" src="" alt="">
+  <p class="lb-cap mono" id="lbCap"></p>
+</dialog>
+
 <footer class="foot">
   <div class="wrap foot-in">
     <div class="foot-brand">
@@ -450,7 +416,6 @@
       <a href="#services">Services</a>
       <a href="#work">Our work</a>
       <a href="#process">How it works</a>
-      <a href="#safety">Safety</a>
       <a href="#faq">FAQ</a>
       <a href="#quote">Get a quote</a>
     </nav>
@@ -462,6 +427,6 @@
   </div>
 </footer>
 
-<script src="assets/js/site.js?v=5" defer></script>
+<script src="assets/js/site.js?v=7" defer></script>
 </body>
 </html>
