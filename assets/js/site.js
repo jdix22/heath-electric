@@ -64,7 +64,7 @@ const SERVICES = [
     text: 'Hot tub and pool equipment hookups with the disconnect in the right place, weatherproof outlets, landscape and security lighting, and power to the garage or shed.',
     list: ['Hot tub disconnects placed where the code requires', 'Buried or surface runs done to the right depth and rating', 'Outdoor GFCI protection throughout'],
     note: 'a hot tub needs its own GFCI-protected circuit and a disconnect within sight of the tub, kept at least 1.5 m from the water. Plan the spot before the tub arrives.',
-    img: IMG('1660330589827-da8ab7dd3c02'), alt: 'An electrician working on an outdoor electrical meter and panel' },
+    img: IMG('1772040942277-b194d9d0b648'), alt: 'A hot tub on a wooden deck surrounded by a lush garden' },
   { id: 'outlets', label: 'Outlets, switches & GFCIs', title: 'Outlets, switches & GFCIs',
     text: 'New outlets where you actually need them, USB-C and smart switches, GFCI protection in kitchens, baths and outdoors, and two-prong outlets brought up to date.',
     list: ['Added circuits where one is doing too much', 'GFCI and AFCI protection where the code calls for it', 'Cover plates straight, flush and level'],
@@ -132,13 +132,20 @@ const label = id => (SERVICES.find(s => s.id === id) || { label: 'Something else
 function panel() {
   const pnl = $('#panel'), card = $('#circuit'), layout = $('.svc-layout'), live = $('#panelLive');
   const announce = id => { live.textContent = `${label(id)} ${selected.has(id) ? 'added to' : 'removed from'} your quote.`; };
+  const inline = () => narrow();
+  if (inline()) card.hidden = true;
   $$('.brk').forEach(b => b.addEventListener('click', () => {
     const id = b.dataset.id;
     toggle(id); announce(id);
+    if (inline() && !selected.has(id)) { if (current === id) card.hidden = true; return; }
+    card.hidden = false;
     show(id, b);
     if (selected.has(id) && !reduce) { b.classList.remove('zap'); void b.offsetWidth; b.classList.add('zap'); }
   }));
-  $('#circuitToggle').addEventListener('click', e => { const id = e.currentTarget.dataset.id; toggle(id); announce(id); });
+  $('#circuitToggle').addEventListener('click', e => {
+    const id = e.currentTarget.dataset.id; toggle(id); announce(id);
+    if (inline() && !selected.has(id)) { card.hidden = true; const b = $(`.brk[data-id="${id}"]`); if (b) b.focus({ preventScroll: true }); }
+  });
   $('#panelGo').addEventListener('click', e => { e.preventDefault(); goForm(); });
   // hero panel directory: pick a circuit, land on the panel with it switched on
   $$('[data-pick]').forEach(a => a.addEventListener('click', e => {
@@ -148,7 +155,10 @@ function panel() {
     $('#services').scrollIntoView({ behavior: reduce ? 'auto' : 'smooth' });
     show(id, $(`.brk[data-id="${id}"]`), true);
   }));
-  matchMedia('(max-width:1080px)').addEventListener('change', () => { if (!narrow() && card.parentNode !== layout) layout.appendChild(card); });
+  matchMedia('(max-width:1080px)').addEventListener('change', () => {
+    if (!narrow()) { card.hidden = false; if (card.parentNode !== layout) layout.appendChild(card); }
+    else if (!selected.has(current)) card.hidden = true;
+  });
 
   // on phones and tablets the details open right under the tapped breaker
   function place(brk, quiet) {
@@ -225,8 +235,8 @@ function beforeAfter() {
       let t0 = null;
       const step = ts => {
         if (t0 === null) t0 = ts;
-        const k = Math.min((ts - t0) / 1600, 1);
-        const v = base + Math.sin(k * Math.PI * 2) * 14 * (1 - k);
+        const k = Math.min((ts - t0) / 2200, 1);
+        const v = base + (92 - base) * Math.pow(1 - k, 3);
         set(v); r.value = v;
         if (k < 1) requestAnimationFrame(step);
       };

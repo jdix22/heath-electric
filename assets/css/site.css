@@ -535,3 +535,14 @@ a.btn-await::before{display:none}
 .ba-await .f-ico{width:40px;height:40px}
 .ba-await{padding-right:5%}
 .ba-await .mono{font-size:10px;letter-spacing:.12em}
+
+/* revision 5: real after photo with the outlet ringed; breaker card hides when switched off */
+.ba-after img{display:block;width:100%;height:100%;object-fit:cover}
+.ba-spot{position:absolute;width:15%;aspect-ratio:1;transform:translate(-50%,-50%);border:3px solid var(--gold);border-radius:50%;box-shadow:0 0 0 5px rgba(254,209,0,.22),0 0 26px rgba(254,209,0,.55);animation:spot 1.9s ease-in-out infinite;pointer-events:none}
+.ba-spot-tag{position:absolute;left:calc(100% + 10px);top:50%;transform:translateY(-50%);white-space:nowrap;padding:7px 12px;border-radius:999px;background:var(--gold);color:#0A0B0A;font:700 15px/1 var(--display);letter-spacing:.1em;text-transform:uppercase;box-shadow:0 6px 18px rgba(0,0,0,.35)}
+@keyframes spot{50%{box-shadow:0 0 0 14px rgba(254,209,0,0),0 0 36px rgba(254,209,0,.75)}}
+@media (prefers-reduced-motion:reduce){.ba-spot{animation:none}}
+@media (max-width:680px){.ba-spot{width:17%;border-width:2px}.ba-spot-tag{font-size:12px;padding:6px 9px;left:calc(100% + 6px)}}
+.circuit[hidden]{display:none!important}
+.ba-tag{top:16px;bottom:auto}
+@media (max-width:680px){.ba-tag{top:12px;bottom:auto}}
