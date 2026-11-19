@@ -5,7 +5,7 @@
 const CONFIG = {
   PHONE: '(647) 895-5693',
   EMAIL: 'service@heathelectric.ca',  // forwards to service.heathelectric@gmail.com via Cloudflare Email Routing
-  HOURS: '',          // e.g. 'Mon–Fri 7 am–6 pm, emergencies by phone'
+  HOURS: '24/7 for quotes',
   AREA: 'Toronto & GTA',
   LICENCE: 'ECRA/ESA Licence #7018901 · Master Electrician',
   INSURANCE: 'Insured',
