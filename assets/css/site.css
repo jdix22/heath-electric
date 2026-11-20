@@ -558,3 +558,8 @@ a.btn-await::before{display:none}
 .about-photo.has-img{display:block;margin:0;aspect-ratio:1200/1560;background:#0A0B0A;border:1px solid rgba(254,209,0,.28);box-shadow:0 30px 70px rgba(0,0,0,.45)}
 .about-photo.has-img img{display:block;width:100%;height:100%;object-fit:cover}
 @media (max-width:1080px){.about-photo.has-img{aspect-ratio:1200/1560;max-width:520px;width:100%;margin-inline:auto}}
+
+/* revision 10: What happens next sits under the quote heading; no gap above the contact list */
+.quote-in{grid-template-rows:auto 1fr}
+.quote-side .next-h{margin:32px 0 16px}
+@media (max-width:1080px){.quote-in{grid-template-rows:none}.quote-side .next{margin-bottom:32px}}
