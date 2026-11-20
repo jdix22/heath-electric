@@ -550,3 +550,6 @@ a.btn-await::before{display:none}
 
 .brand-word{white-space:nowrap}
 @media (max-width:680px){.brand-word{font-size:17px;letter-spacing:.03em}}
+
+/* revision 8: Julian's four-paragraph bio, spaced */
+.about-copy p:not(.big):not(.eyebrow){margin:0 0 14px}
