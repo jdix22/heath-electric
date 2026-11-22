@@ -25,7 +25,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://images.unsplash.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
-<link rel="stylesheet" href="assets/css/site.css?v=14">
+<link rel="stylesheet" href="assets/css/site.css?v=15">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -210,7 +210,7 @@
           <ul class="ticks" id="circuitList">
             <li>Fault traced with proper testing, not guesswork</li>
             <li>A plain explanation of what failed and why</li>
-            <li>A fix price before the repair starts</li>
+            <li>Clear, upfront pricing before repairs begin</li>
           </ul>
           <p class="note" id="circuitNote"><b>Good to know:</b> if something smells hot or you see scorch marks, switch off that breaker and don’t reset it until it’s been checked.</p>
           <button class="btn btn-outline" type="button" id="circuitToggle" data-id="trouble">Switch on: add to my quote</button>
@@ -226,12 +226,16 @@
     <div class="sec-head">
       <p class="eyebrow"><span>02</span> Our work</p>
       <h2 id="work-h">Before. After. Drag to see the difference.</h2>
-      <p class="sec-lede">A real Heath Electric job. Drag the handle to see what changed.</p>
+      <p class="sec-lede">Real Heath Electric jobs. Pick one, then drag the handle to see what changed.</p>
     </div>
 
+    <div class="ba-pick" role="group" aria-label="Choose a job to compare">
+      <button type="button" class="ba-opt" data-job="0" aria-pressed="true">Pot lights</button>
+      <button type="button" class="ba-opt" data-job="1" aria-pressed="false">New outlet</button>
+    </div>
     <figure class="ba" id="ba" style="--pos:24%">
-      <img class="ba-img ba-before" src="assets/img/ba-before.jpg" alt="Before: a hallway wall with a light switch beside a closet door" width="1050" height="1400" loading="lazy" decoding="async">
-      <div class="ba-img ba-after"><img src="assets/img/ba-after.jpg" alt="After: the same wall with a new outlet installed below the switch" width="1050" height="1400" loading="lazy" decoding="async"><span class="ba-spot" style="left:48.5%;top:73.4%" aria-hidden="true"><span class="ba-spot-tag">New outlet</span></span></div>
+      <img class="ba-img ba-before" src="assets/img/ba2-before.jpg" alt="Before: a living room wall lit only by an old track light" width="1050" height="1400" loading="lazy" decoding="async">
+      <div class="ba-img ba-after"><img src="assets/img/ba2-after.jpg" alt="After: the same wall with new pot lights washing it in light and a picture light over the art" width="1050" height="1400" loading="lazy" decoding="async"><span class="ba-spot" style="left:48.5%;top:73.4%" aria-hidden="true" hidden><span class="ba-spot-tag">New outlet</span></span></div>
       <span class="ba-tag ba-tag-b">Before</span>
       <span class="ba-tag ba-tag-a">After</span>
       <div class="ba-handle" aria-hidden="true"><span><svg><use href="#bolt"></use></svg></span></div>
@@ -239,7 +243,7 @@
       <input class="ba-range" id="baRange" type="range" min="0" max="100" value="24">
       <figcaption class="ba-cap">
         <span class="mono gold">The job</span>
-        <span>A new outlet added below the existing switch, beside a closet door. Drag the handle to compare.</span>
+        <span id="baCapText">New pot lights along the living room bulkhead, plus a picture light over the art. Drag the handle to compare.</span>
       </figcaption>
     </figure>
 
@@ -275,7 +279,7 @@
       <li class="step">
         <span class="node" aria-hidden="true"></span>
         <p class="mono">Step 4</p>
-        <h3>Final inspection &amp; walkthrough</h3>
+        <h3>Final testing &amp; walkthrough</h3>
         <p>Once the work is complete, we’ll review the installation, perform the necessary testing, and ensure everything is left clean, organized, and ready for use.</p>
       </li>
     </ol>
@@ -419,6 +423,6 @@
   </div>
 </footer>
 
-<script src="assets/js/site.js?v=12" defer></script>
+<script src="assets/js/site.js?v=13" defer></script>
 </body>
 </html>

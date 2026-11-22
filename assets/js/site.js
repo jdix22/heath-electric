@@ -17,7 +17,7 @@ const IMG = (id, w = 1100) => `https://images.unsplash.com/photo-${id}?w=${w}&q=
 const SERVICES = [
   { id: 'trouble', label: 'Troubleshooting & repairs', title: 'Troubleshooting & repairs',
     text: 'Breakers that keep tripping, outlets that died, lights that flicker, switches that buzz or feel warm. Found, explained and fixed.',
-    list: ['Fault traced with proper testing, not guesswork', 'A plain explanation of what failed and why', 'A fix price before the repair starts'],
+    list: ['Fault traced with proper testing, not guesswork', 'A plain explanation of what failed and why', 'Clear, upfront pricing before repairs begin'],
     note: 'if something smells hot or you see scorch marks, switch off that breaker and don’t reset it until it’s been checked.',
     img: IMG('1758101755915-462eddc23f57'), alt: 'An electrician testing a breaker panel with a multimeter' },
   { id: 'lighting', label: 'Lighting & pot lights', title: 'Lighting, pot lights & dimmers',
@@ -217,22 +217,49 @@ function beforeAfter() {
   const ba = $('#ba'), r = $('#baRange');
   const set = v => ba.style.setProperty('--pos', v + '%');
   const base = +r.value;
-  r.addEventListener('input', () => set(r.value));
+  let run = 0;
+  r.addEventListener('input', () => { run++; set(r.value); });
+  const sweep = () => {
+    if (reduce) { set(base); r.value = base; return; }
+    const id = ++run; let t0 = null;
+    const step = ts => {
+      if (id !== run) return;
+      if (t0 === null) t0 = ts;
+      const k = Math.min((ts - t0) / 2200, 1);
+      const v = base + (92 - base) * Math.pow(1 - k, 3);
+      set(v); r.value = v;
+      if (k < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  };
   if (!reduce && 'IntersectionObserver' in window) {
     const io = new IntersectionObserver(([e]) => {
-      if (!e.isIntersecting) return; io.disconnect();
-      let t0 = null;
-      const step = ts => {
-        if (t0 === null) t0 = ts;
-        const k = Math.min((ts - t0) / 2200, 1);
-        const v = base + (92 - base) * Math.pow(1 - k, 3);
-        set(v); r.value = v;
-        if (k < 1) requestAnimationFrame(step);
-      };
-      requestAnimationFrame(step);
+      if (!e.isIntersecting) return; io.disconnect(); sweep();
     }, { threshold: .6 });
     io.observe(ba);
   }
+  /* job picker: Julian's favourite (pot lights) first */
+  const JOBS = [
+    { b: 'ba2-before.jpg', a: 'ba2-after.jpg', spot: false,
+      bAlt: 'Before: a living room wall lit only by an old track light',
+      aAlt: 'After: the same wall with new pot lights washing it in light and a picture light over the art',
+      cap: 'New pot lights along the living room bulkhead, plus a picture light over the art. Drag the handle to compare.' },
+    { b: 'ba-before.jpg', a: 'ba-after.jpg', spot: true,
+      bAlt: 'Before: a hallway wall with a light switch beside a closet door',
+      aAlt: 'After: the same wall with a new outlet installed below the switch',
+      cap: 'A new outlet added below the existing switch, beside a closet door. Drag the handle to compare.' }
+  ];
+  const imgB = $('.ba-before', ba), imgA = $('.ba-after img', ba), spot = $('.ba-spot', ba), cap = $('#baCapText');
+  JOBS.forEach(j => { new Image().src = 'assets/img/' + j.a; new Image().src = 'assets/img/' + j.b; });
+  $$('.ba-opt').forEach(btn => btn.addEventListener('click', () => {
+    if (btn.getAttribute('aria-pressed') === 'true') return;
+    const j = JOBS[+btn.dataset.job];
+    $$('.ba-opt').forEach(o => o.setAttribute('aria-pressed', String(o === btn)));
+    imgB.src = 'assets/img/' + j.b; imgB.alt = j.bAlt;
+    imgA.src = 'assets/img/' + j.a; imgA.alt = j.aAlt;
+    spot.hidden = !j.spot; cap.textContent = j.cap;
+    sweep();
+  }));
 }
 
 /* ---------- process wire ---------- */
